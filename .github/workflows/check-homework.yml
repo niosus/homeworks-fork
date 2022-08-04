@@ -54,6 +54,7 @@ jobs:
       with:
         repository: cpp-for-yourself/homework-definitions
         path: definitions
+        ref: hello-world-homework
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
