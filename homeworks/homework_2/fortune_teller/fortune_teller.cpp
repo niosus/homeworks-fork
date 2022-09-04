@@ -40,7 +40,6 @@ int main() {
   adjectives.push_back(adjective);
 
   std::cout << std::endl;
-  //  Igor is a ruthless STL guru that eats UB for breakfast
   std::cout << "Here is your description:" << std::endl;
   std::cout << name << ", the " << adjectives[name.size() % adjectives.size()]
             << " " << kNoun.at(time_of_year) << " that "
