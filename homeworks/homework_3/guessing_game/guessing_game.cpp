@@ -14,7 +14,7 @@ int main() {
   std::cin >> largest_number;
 
   std::random_device random_device{};
-  std::minstd_rand random_engine{random_device()};
+  std::mt19937 random_engine{random_device()};
   std::string user_wants_seed_response{};
   std::cout << "Do you want to provide a random seed? [y/n]" << std::endl;
   std::cin >> user_wants_seed_response;
