@@ -13,19 +13,8 @@ int main() {
   std::cout << "Please provide the largest number: " << std::endl;
   std::cin >> largest_number;
 
-  std::mt19937 random_engine;
-  std::string user_wants_seed_response{};
-  std::cout << "Do you want to provide a random seed? [y/n]" << std::endl;
-  std::cin >> user_wants_seed_response;
-
-  if (user_wants_seed_response == "y") {
-    std::cout << "Please provide a seed:" << std::endl;
-    int seed{};
-    std::cin >> seed;
-    random_engine.seed(seed);
-  } else {
-    random_engine.seed(std::random_device{}());
-  }
+  std::random_device random_device{};
+  std::mt19937 random_engine{random_device()};
 
   UniformDistribution distribution{smallest_number, largest_number};
   const auto magic_number = distribution(random_engine);
