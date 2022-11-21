@@ -41,6 +41,8 @@ jobs:
   check_homework:
     runs-on: ubuntu-latest
     steps:
+    - name: Check git version
+      run: git --version
     - name: Checkout this homework
       uses: actions/checkout@v3
       with:
