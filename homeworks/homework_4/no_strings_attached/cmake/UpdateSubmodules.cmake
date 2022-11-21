@@ -10,12 +10,11 @@ if(GIT_FOUND)
                     OUTPUT_VARIABLE EXISTING_SUBMODULES
                     RESULT_VARIABLE RETURN_CODE)
     message(STATUS "Updating git submodules:\n${EXISTING_SUBMODULES}")
-    set(UPDATE_GIT_COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive)
-    execute_process(COMMAND ${UPDATE_GIT_COMMAND}
+    execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive
                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                     RESULT_VARIABLE RETURN_CODE)
     if(NOT RETURN_CODE EQUAL "0")
-        message(FATAL_ERROR "${UPDATE_GIT_COMMAND} failed with ${RETURN_CODE}")
+        message(WARNING "Cannot update submodules. Git command failed with ${RETURN_CODE}.")
         return()
     endif()
     message(STATUS "Git submodules updated successfully.")
