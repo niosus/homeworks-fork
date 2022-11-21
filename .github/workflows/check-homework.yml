@@ -22,9 +22,7 @@ jobs:
         body: |
           ## Tests are running! Please wait!
 
-          ![Progress gif](https://cdn.dribbble.com/users/2015153/screenshots/6592242/progess-bar2.gif)
-
-          > Progress gif from https://dribbble.com/shots/6592242-Please-wait-Animation#
+          ![Progress gif](https://acegif.com/wp-content/uploads/loading-37.gif)
 
           With ❤️ from Homework Bot 🤖
     - name: Update comment
@@ -36,9 +34,7 @@ jobs:
         body: |
           ## Tests are running! Please wait!
 
-          ![Progress gif](https://cdn.dribbble.com/users/2015153/screenshots/6592242/progess-bar2.gif)
-
-          > Progress gif from https://dribbble.com/shots/6592242-Please-wait-Animation#
+          ![Progress gif](https://acegif.com/wp-content/uploads/loading-37.gif)
 
           With ❤️ from Homework Bot 🤖
 
@@ -46,13 +42,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout this homework
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         path: homework
-    - name: Checkout submodules
-        run: git submodule update --init --recursive
     - name: Checkout homework definitions
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: cpp-for-yourself/homework-definitions
         path: definitions
@@ -122,7 +116,7 @@ jobs:
         comment-author: 'github-actions[bot]'
         body-includes: With 💙 from Homework Bot 🤖
     - name: Checkout wiki
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: ${{ github.repository }}.wiki
         path: wiki
