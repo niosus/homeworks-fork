@@ -49,6 +49,8 @@ jobs:
       uses: actions/checkout@v2
       with:
         path: homework
+    - name: Checkout submodules
+        run: git submodule update --init --recursive
     - name: Checkout homework definitions
       uses: actions/checkout@v2
       with:
@@ -62,7 +64,6 @@ jobs:
         architecture: 'x64'
     - name: Install prerequisites
       run: |
-        sudo apt install -y libgtest-dev
         python -m pip install --upgrade pip pipenv ruamel.yaml schema homework-checker
     - name: Run tests
       run: |
