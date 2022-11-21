@@ -22,7 +22,7 @@ jobs:
         body: |
           ## Tests are running! Please wait!
 
-          ![Progress gif](https://acegif.com/wp-content/uploads/loading-37.gif)
+          ![Progress gif](https://acegif.com/wp-content/uploads/loading-23.gif)
 
           With ❤️ from Homework Bot 🤖
     - name: Update comment
@@ -34,7 +34,7 @@ jobs:
         body: |
           ## Tests are running! Please wait!
 
-          ![Progress gif](https://acegif.com/wp-content/uploads/loading-37.gif)
+          ![Progress gif](https://acegif.com/wp-content/uploads/loading-23.gif)
 
           With ❤️ from Homework Bot 🤖
 
