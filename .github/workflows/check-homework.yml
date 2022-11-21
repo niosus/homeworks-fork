@@ -21,11 +21,11 @@ jobs:
         issue-number: ${{ github.event.pull_request.number }}
         body: |
           ## Tests are running! Please wait!
-          
+
           ![Progress gif](https://cdn.dribbble.com/users/2015153/screenshots/6592242/progess-bar2.gif)
 
           > Progress gif from https://dribbble.com/shots/6592242-Please-wait-Animation#
-          
+
           With ❤️ from Homework Bot 🤖
     - name: Update comment
       if: steps.fc.outputs.comment-id != ''
@@ -35,13 +35,13 @@ jobs:
         edit-mode: replace
         body: |
           ## Tests are running! Please wait!
-          
+
           ![Progress gif](https://cdn.dribbble.com/users/2015153/screenshots/6592242/progess-bar2.gif)
-          
+
           > Progress gif from https://dribbble.com/shots/6592242-Please-wait-Animation#
 
           With ❤️ from Homework Bot 🤖
-        
+
   check_homework:
     runs-on: ubuntu-latest
     steps:
@@ -54,7 +54,7 @@ jobs:
       with:
         repository: cpp-for-yourself/homework-definitions
         path: definitions
-        ref: main
+        ref: strings_lib
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -147,13 +147,13 @@ jobs:
         issue-number: ${{ github.event.pull_request.number }}
         body: |
           # ‼️ Wiki is empty ‼️
-          
+
           To fix this error you will have to perform the following actions once:
           1. Create _any_ (even empty) page in the wiki by clicking this link: ${{ github.server_url }}/${{ github.repository }}/wiki/_new
           2. Rerun the actions by clicking the <kbd>🔄 Re-run all jobs</kbd> button here: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          
+
           ---
-          
+
           With 💙 from Homework Bot 🤖
         edit-mode: replace
     - name: Comment on wiki access success
@@ -166,6 +166,6 @@ jobs:
           # ✅ Wiki is available
 
           Check it out at: ${{ github.server_url }}/${{ github.repository }}/wiki
-          
+
           With 💙 from Homework Bot 🤖
         edit-mode: replace
