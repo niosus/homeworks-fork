@@ -7,4 +7,4 @@ jobs:
     name: Run all tests
     uses: cpp-for-yourself/ci-jobs/.github/workflows/check-homework.yml@main
     with:
-      homework-definitions-branch: main
+      homework-definitions-branch: strings_lib
