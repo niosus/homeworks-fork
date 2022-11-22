@@ -4,4 +4,7 @@ on: [pull_request]
 
 jobs:
   run_all_tests:
-    uses: niosus/test-reusable-job/.github/workflows/job.yaml@main
+    name: Run all tests
+    uses: cpp-for-yourself/ci-jobs/.github/workflows/check-homework.yml@main
+    with:
+      homework-definitions-branch: main
