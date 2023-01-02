@@ -8,3 +8,5 @@ jobs:
     uses: cpp-for-yourself/ci-jobs/.github/workflows/check-homework.yml@main
     with:
       homework-definitions-branch: strings_lib
+      ci-jobs-branch: main
+      homework-checker-version: 2.0.0
