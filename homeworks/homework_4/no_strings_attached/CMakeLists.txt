@@ -14,8 +14,7 @@ add_library(cxx_defaults INTERFACE)
 target_compile_options(cxx_defaults
   INTERFACE -Wall -Wpedantic -Wextra)
 target_compile_features(cxx_defaults INTERFACE cxx_std_17)
-target_include_directories(cxx_defaults
-  INTERFACE ${PROJECT_SOURCE_DIR}/src)
+target_include_directories(cxx_defaults INTERFACE ${PROJECT_SOURCE_DIR})
 
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
   include(CTest)
