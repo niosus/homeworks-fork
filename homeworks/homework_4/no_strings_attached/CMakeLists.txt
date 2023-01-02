@@ -21,4 +21,5 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
   include(CTest)
 endif()
 
-add_subdirectory(src)
+add_subdirectory(no_strings_attached)
+add_subdirectory(validation_tests)

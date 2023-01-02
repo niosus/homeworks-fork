@@ -2,9 +2,5 @@ add_library(string_split INTERFACE)
 target_link_libraries(string_split INTERFACE cxx_defaults)
 
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
-    add_subdirectory(tests)
+    # add_subdirectory(tests)
 endif()
-
-
-add_library(string_manipulation INTERFACE)
-target_link_libraries(string_manipulation INTERFACE string_split)
