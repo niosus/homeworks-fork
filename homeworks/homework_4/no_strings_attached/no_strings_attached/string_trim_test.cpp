@@ -6,7 +6,7 @@ using no_strings_attached::Side;
 using no_strings_attached::Trim;
 }  // namespace
 
-TEST(TrimValidationTest, TrimEmpty) {
+TEST(TrimTest, TrimEmpty) {
   const auto test_string = "";
   const auto trimmed_both_sides = Trim(test_string);
   const auto trimmed_both_sides_explicit = Trim(test_string, ' ', Side::kBoth);
@@ -18,7 +18,7 @@ TEST(TrimValidationTest, TrimEmpty) {
   EXPECT_EQ(trimmed_right_side, test_string);
 }
 
-TEST(TrimValidationTest, TrimTrivial) {
+TEST(TrimTest, TrimTrivial) {
   const auto test_string = "hello";
   const auto trimmed_both_sides = Trim(test_string);
   const auto trimmed_both_sides_explicit = Trim(test_string, ' ', Side::kBoth);
@@ -34,7 +34,7 @@ TEST(TrimValidationTest, TrimTrivial) {
       << "Failed to trim string: '" << test_string << "'";
 }
 
-TEST(TrimValidationTest, TrimCorrect) {
+TEST(TrimTest, TrimCorrect) {
   const auto test_string = "  hello ";
   const auto trimmed_both_sides = Trim(test_string);
   const auto trimmed_both_sides_explicit = Trim(test_string, ' ', Side::kBoth);

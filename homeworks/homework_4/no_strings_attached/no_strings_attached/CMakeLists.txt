@@ -12,6 +12,6 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
     add_executable(${TESTS}
         string_split_test.cpp
         string_trim_test.cpp)
-    target_link_libraries(${TESTS} GTest::gtest_main string_split string_trim)
+    target_link_libraries(${TESTS} PRIVATE GTest::gtest_main string_split string_trim)
     gtest_discover_tests(${TESTS} WORKING_DIRECTORY ${PROJECT_DIR})
 endif()
