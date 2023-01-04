@@ -21,3 +21,4 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
 endif()
 
 add_subdirectory(no_strings_attached)
+add_subdirectory(examples)
