@@ -7,10 +7,10 @@ int main() {
   std::cout << "Welcome to the GUESSING GAME!" << std::endl;
   std::cout << "I will generate a number and you will guess it!" << std::endl;
   int smallest_number{};
-  std::cout << "Please provide the smallest number: " << std::endl;
+  std::cout << "Please provide the smallest number:" << std::endl;
   std::cin >> smallest_number;
   int largest_number{};
-  std::cout << "Please provide the largest number: " << std::endl;
+  std::cout << "Please provide the largest number:" << std::endl;
   std::cin >> largest_number;
 
   std::random_device random_device{};
