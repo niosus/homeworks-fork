@@ -26,3 +26,5 @@ project following the homework receipt found in the
 [`homework-definitions`](https://github.com/cpp-for-yourself/homework-definitions)
 project.
 
+Minor test
+
