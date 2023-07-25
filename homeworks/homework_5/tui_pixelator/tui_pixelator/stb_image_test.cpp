@@ -25,7 +25,7 @@ TEST(StbImageTest, MoveConstructor) {
   ASSERT_FALSE(image_other.empty());
 }
 
-TEST(StbImageTest, MoveAssignment) {
+TEST(StbImageTest, MoveAssignmentOperator) {
   const std::filesystem::path image_path{
       "../../tui_pixelator/test_data/grumpy.png"};
   StbImage image_to_move_to{};
