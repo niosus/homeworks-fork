@@ -1,8 +1,6 @@
 #ifndef HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_STB_IMAGE_HPP
 #define HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_STB_IMAGE_HPP
 
-#include <malloc/_malloc.h>
-
 #include <algorithm>
 #include <cstddef>
 #include <filesystem>
