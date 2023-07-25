@@ -1,18 +1,41 @@
 #ifndef HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_STB_IMAGE_HPP
 #define HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_STB_IMAGE_HPP
 
-#include "tui_pixelator/size.hpp"
+#include <malloc/_malloc.h>
+
+#include <algorithm>
+#include <cstddef>
+#include <filesystem>
 
 #include "ftxui/screen/color.hpp"
 #include "stb/stb_image.h"
-
-#include <filesystem>
+#include "tui_pixelator/size.hpp"
 
 namespace pixelator {
 
 class StbImage {
  public:
+  StbImage() = default;
   explicit StbImage(const std::filesystem::path& image_path);
+
+  StbImage(const StbImage& other) = delete;
+  StbImage& operator=(const StbImage& other) = delete;
+
+  StbImage(StbImage&& other)
+      : size_{other.size_},
+        channels_{other.channels_},
+        image_data_{other.image_data_} {
+    other.image_data_ = nullptr;
+  }
+
+  StbImage& operator=(StbImage&& other) {
+    if (&other == this) { return *this; }
+    size_ = other.size_;
+    channels_ = other.channels_;
+    image_data_ = other.image_data_;
+    other.image_data_ = nullptr;
+    return *this;
+  }
 
   ftxui::Color at(int row, int col) const;
 

@@ -1,26 +1,30 @@
 #include "tui_pixelator/drawer.hpp"
 
+#include <gtest/gtest.h>
+
 #include <ftxui/screen/color.hpp>
 #include <ftxui/screen/screen.hpp>
-#include <gtest/gtest.h>
 
 namespace {
 using pixelator::Drawer;
-}
+using pixelator::PixelatedImage;
+using pixelator::Size;
+}  // namespace
 
 TEST(DrawerTest, Initialization) {
   Drawer drawer{ftxui::Dimension::Fixed(42)};
-  EXPECT_EQ(drawer.size().cols, 21);
   EXPECT_EQ(drawer.size().rows, 42);
-  EXPECT_EQ(drawer.cols(), 21);
+  EXPECT_EQ(drawer.size().cols, 84);
   EXPECT_EQ(drawer.rows(), 42);
+  EXPECT_EQ(drawer.cols(), 84);
 }
 
-TEST(DrawerTest, SetColor) {
-  Drawer drawer{ftxui::Dimension::Fixed(42)};
-  const auto &color = drawer.ColorAt(10, 10);
-  EXPECT_EQ(color, ftxui::Color{});
-  const ftxui::Color set_color{10, 20, 30};
-  drawer.SetPixelColor(10, 10, set_color);
-  EXPECT_EQ(drawer.ColorAt(10, 10), set_color);
+TEST(DrawerTest, SetFromImage) {
+  PixelatedImage image{Size{1, 2}};
+  image.at(0, 0) = ftxui::Color::Black;
+  image.at(0, 1) = ftxui::Color::Red;
+  Drawer drawer{ftxui::Dimension::Fixed(1)};
+  drawer.Set(image);
+  EXPECT_EQ(drawer.ToString(),
+            std::string{"\x1B[39m\x1B[40m \x1B[39m\x1B[49m"});
 }

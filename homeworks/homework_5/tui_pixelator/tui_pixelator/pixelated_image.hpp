@@ -10,22 +10,24 @@ class PixelatedImage {
  public:
   PixelatedImage() = default;
 
-  explicit PixelatedImage(const Size& size)
+  explicit PixelatedImage(const Size &size)
       : size_{size}, pixels_(size_.rows * size_.cols, ftxui::Color{}) {}
 
   PixelatedImage(int rows, int cols) : PixelatedImage{Size{rows, cols}} {}
 
-  ftxui::Color& at(int row, int col) { return pixels_[Index(row, col)]; }
-  const ftxui::Color& at(int row, int col) const {
+  inline ftxui::Color &at(int row, int col) { return pixels_[Index(row, col)]; }
+  inline const ftxui::Color &at(int row, int col) const {
     return pixels_[Index(row, col)];
   }
 
-  const Size& size() const noexcept { return size_; }
-  int cols() const noexcept { return size_.cols; }
-  int rows() const noexcept { return size_.rows; }
+  inline const Size &size() const noexcept { return size_; }
+  inline int cols() const noexcept { return size_.cols; }
+  inline int rows() const noexcept { return size_.rows; }
 
  private:
-  std::size_t Index(int row, int col) const { return row * size_.cols + col; }
+  inline std::size_t Index(int row, int col) const {
+    return row * size_.cols + col;
+  }
 
   Size size_{};
   std::vector<ftxui::Color> pixels_{};

@@ -6,7 +6,8 @@ jobs:
   run_all_tests:
     name: Run all tests
     uses: cpp-for-yourself/ci-jobs/.github/workflows/check-homework.yml@main
+    permissions:
+      contents: write
+      pull-requests: write
     with:
       homework-definitions-branch: main
-      ci-jobs-branch: main
-      homework-checker-version: 2.0.0

@@ -9,7 +9,7 @@ static constexpr auto kLoadAllChannels{0};
 
 namespace pixelator {
 
-StbImage::StbImage(const std::filesystem::path& image_path)
+StbImage::StbImage(const std::filesystem::path &image_path)
     : image_data_{stbi_load(image_path.c_str(),
                             &size_.cols,
                             &size_.rows,

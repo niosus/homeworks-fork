@@ -1,13 +1,15 @@
 #include "tui_pixelator/pixelated_image.hpp"
 #include "tui_pixelator/stb_image.hpp"
 
-namespace pixelator {
-
+namespace {
 int Scale(int number, float factor) {
   return static_cast<int>(number * factor);
 }
+}  // namespace
 
-PixelatedImage Pixelate(const StbImage& image, const Size& smaller_size) {
+namespace pixelator {
+
+PixelatedImage Pixelate(const StbImage &image, const Size &smaller_size) {
   if (smaller_size.cols >= image.cols() || smaller_size.rows >= image.rows()) {
     return PixelatedImage{};
   }

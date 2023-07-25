@@ -6,9 +6,7 @@
 
 namespace pixelator {
 
-int Scale(int number, float factor);
-
-PixelatedImage Pixelate(const StbImage& image, const Size& smaller_size);
+PixelatedImage Pixelate(const StbImage &image, const Size &smaller_size);
 
 }  // namespace pixelator
 
