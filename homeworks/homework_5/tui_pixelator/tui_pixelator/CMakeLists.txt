@@ -14,9 +14,10 @@ if(BUILD_TESTING)
   include(GoogleTest)
   add_executable(tui_pixelator_tests
     drawer_test.cpp
+    pixelate_test.cpp
     pixelated_image_test.cpp
     stb_image_test.cpp)
   target_link_libraries(tui_pixelator_tests PRIVATE
-    cxx_setup drawer stb_image pixelated_image GTest::gtest_main)
+    cxx_setup drawer stb_image pixelated_image pixelate_image GTest::gtest_main)
   gtest_discover_tests(tui_pixelator_tests)
 endif()

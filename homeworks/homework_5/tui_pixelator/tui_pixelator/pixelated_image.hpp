@@ -23,6 +23,9 @@ class PixelatedImage {
   inline const Size &size() const noexcept { return size_; }
   inline int cols() const noexcept { return size_.cols; }
   inline int rows() const noexcept { return size_.rows; }
+  inline bool empty() const noexcept {
+    return (size_.cols < 1) || (size_.rows < 1);
+  }
 
  private:
   inline std::size_t Index(int row, int col) const {
