@@ -10,4 +10,4 @@ jobs:
       contents: write
       pull-requests: write
     with:
-      homework-definitions-branch: pixelator
+      homework-definitions-branch: main
