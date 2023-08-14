@@ -1,11 +1,12 @@
-#include <filesystem>
-#include <iostream>
-
 // Make sure to have this in EXACTLY one cpp file
 // The best place for this is the cpp file of your library
 // that holds a class that wraps around the stb_image data
+// For more see here: https://github.com/nothings/stb#faq
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
+
+#include <filesystem>
+#include <iostream>
 
 namespace {
 static constexpr auto kLoadAllChannels{0};
@@ -25,6 +26,8 @@ int main(int argc, char **argv) {
   if (!std::filesystem::exists(image_path)) {
     std::cerr << "No image provided.\n";
   }
+
+  // Load the data
   int rows{};
   int cols{};
   int channels{};
@@ -37,9 +40,10 @@ int main(int argc, char **argv) {
     std::cerr << "Failed to load image data from file: " << image_path
               << std::endl;
   }
-  // The data is stored sequentially, in this order per pixel: red, green, blue, alpha
-  // This patterns repeats for every pixel of the image, so the resulting data layout is:
-  // [rgbargbargba...]
+
+  // The data is stored sequentially, in this order per pixel: red, green, blue,
+  // alpha This patterns repeats for every pixel of the image, so the resulting
+  // data layout is: [rgbargbargba...]
   int query_row = 3;
   int query_col = 2;
   const auto index{channels * (query_row * cols + query_col)};

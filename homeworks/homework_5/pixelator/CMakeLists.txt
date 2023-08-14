@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.16..3.24)
-project(tui_pixelator VERSION 1
-        DESCRIPTION "Writing a string processing library"
-        LANGUAGES CXX)
+project(pixelator VERSION 1
+  DESCRIPTION "Writing a string processing library"
+  LANGUAGES CXX)
 
 if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
 endif()
 
 message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
