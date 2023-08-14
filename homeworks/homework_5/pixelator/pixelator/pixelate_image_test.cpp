@@ -1,8 +1,8 @@
-#include "tui_pixelator/pixelate_image.hpp"
+#include "pixelator/pixelate_image.hpp"
 
-#include "tui_pixelator/image.hpp"
-#include "tui_pixelator/size.hpp"
-#include "tui_pixelator/stb_image_data_view.hpp"
+#include "pixelator/image.hpp"
+#include "pixelator/size.hpp"
+#include "pixelator/stb_image_data_view.hpp"
 
 #include "gtest/gtest.h"
 
@@ -12,7 +12,7 @@ using pixelator::PixelateImage;
 using pixelator::Size;
 using pixelator::StbImageDataView;
 
-const auto kImagePath{"../../tui_pixelator/test_data/test.png"};
+const auto kImagePath{"../../pixelator/test_data/test.png"};
 const auto kBlack{ftxui::Color::RGB(0, 0, 0)};
 const auto kWhite{ftxui::Color::RGB(255, 255, 255)};
 }  // namespace

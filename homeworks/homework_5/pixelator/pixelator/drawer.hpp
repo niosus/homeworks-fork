@@ -1,10 +1,10 @@
-#ifndef HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_DRAWER_HPP
-#define HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_DRAWER_HPP
+#ifndef HOMEWORKS_HOMEWORK_5_PIXELATOR_PIXELATOR_DRAWER_HPP
+#define HOMEWORKS_HOMEWORK_5_PIXELATOR_PIXELATOR_DRAWER_HPP
 
 #include "ftxui/screen/color.hpp"
 #include "ftxui/screen/screen.hpp"
-#include "tui_pixelator/image.hpp"
-#include "tui_pixelator/size.hpp"
+#include "pixelator/image.hpp"
+#include "pixelator/size.hpp"
 
 namespace pixelator {
 
@@ -39,4 +39,4 @@ class Drawer {
 
 }  // namespace pixelator
 
-#endif /* HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_DRAWER_HPP */
+#endif /* HOMEWORKS_HOMEWORK_5_PIXELATOR_PIXELATOR_DRAWER_HPP */

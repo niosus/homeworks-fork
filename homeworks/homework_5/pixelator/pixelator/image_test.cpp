@@ -1,4 +1,4 @@
-#include "tui_pixelator/image.hpp"
+#include "pixelator/image.hpp"
 
 #include "ftxui/screen/color.hpp"
 #include "gtest/gtest.h"

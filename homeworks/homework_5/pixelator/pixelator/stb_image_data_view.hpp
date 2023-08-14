@@ -7,7 +7,7 @@
 
 #include "ftxui/screen/color.hpp"
 #include "stb/stb_image.h"
-#include "tui_pixelator/size.hpp"
+#include "pixelator/size.hpp"
 
 namespace pixelator {
 

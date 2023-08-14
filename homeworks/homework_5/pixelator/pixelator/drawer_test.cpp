@@ -1,4 +1,4 @@
-#include "tui_pixelator/drawer.hpp"
+#include "pixelator/drawer.hpp"
 
 #include <gtest/gtest.h>
 #include <ftxui/screen/color.hpp>

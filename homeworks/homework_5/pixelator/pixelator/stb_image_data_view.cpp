@@ -1,4 +1,4 @@
-#include "tui_pixelator/stb_image_data_view.hpp"
+#include "pixelator/stb_image_data_view.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"

@@ -1,6 +1,6 @@
-#include "tui_pixelator/pixelate_image.hpp"
-#include "tui_pixelator/image.hpp"
-#include "tui_pixelator/stb_image_data_view.hpp"
+#include "pixelator/pixelate_image.hpp"
+#include "pixelator/image.hpp"
+#include "pixelator/stb_image_data_view.hpp"
 
 namespace {
 int Scale(int number, float factor) {

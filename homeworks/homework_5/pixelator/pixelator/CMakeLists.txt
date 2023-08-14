@@ -12,12 +12,13 @@ target_link_libraries(pixelate_image PUBLIC cxx_setup stb_image_data_view image)
 
 if(BUILD_TESTING)
   include(GoogleTest)
-  add_executable(tui_pixelator_tests
+  set(PIXELATOR_TESTS pixelator_tests)
+  add_executable(${PIXELATOR_TESTS}
     drawer_test.cpp
     pixelate_image_test.cpp
     image_test.cpp
     stb_image_data_view_test.cpp)
-  target_link_libraries(tui_pixelator_tests PRIVATE
+  target_link_libraries(${PIXELATOR_TESTS} PRIVATE
     cxx_setup drawer stb_image_data_view image pixelate_image GTest::gtest_main)
-  gtest_discover_tests(tui_pixelator_tests)
+  gtest_discover_tests(${PIXELATOR_TESTS})
 endif()

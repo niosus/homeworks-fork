@@ -1,11 +1,11 @@
-#include "tui_pixelator/stb_image_data_view.hpp"
+#include "pixelator/stb_image_data_view.hpp"
 
 #include "ftxui/screen/color.hpp"
 #include "gtest/gtest.h"
 
 namespace {
 using pixelator::StbImageDataView;
-const auto kImagePath{"../../tui_pixelator/test_data/test.png"};
+const auto kImagePath{"../../pixelator/test_data/test.png"};
 const auto kBlack{ftxui::Color::RGB(0, 0, 0)};
 const auto kWhite{ftxui::Color::RGB(255, 255, 255)};
 }  // namespace

@@ -2,7 +2,7 @@
 #define HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_IMAGE_HPP
 
 #include "ftxui/screen/color.hpp"
-#include "tui_pixelator/size.hpp"
+#include "pixelator/size.hpp"
 
 namespace pixelator {
 
