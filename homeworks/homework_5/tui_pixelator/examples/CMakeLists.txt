@@ -1,5 +1,11 @@
+add_executable(use_ftxui use_ftxui.cpp)
+target_link_libraries(use_ftxui PRIVATE ftxui::screen)
+
+add_executable(use_stb_image use_stb_image.cpp)
+target_link_libraries(use_stb_image PRIVATE stb::stb ftxui::screen)
+
 add_executable(pixelate pixelate.cpp)
 target_link_libraries(pixelate PRIVATE
   drawer
-  stb_image
+  stb_image_data_view
   pixelate_image)

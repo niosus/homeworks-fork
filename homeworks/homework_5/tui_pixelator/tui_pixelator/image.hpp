@@ -1,19 +1,19 @@
-#ifndef HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_PIXELATED_IMAGE_HPP
-#define HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_PIXELATED_IMAGE_HPP
+#ifndef HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_IMAGE_HPP
+#define HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_IMAGE_HPP
 
 #include "ftxui/screen/color.hpp"
 #include "tui_pixelator/size.hpp"
 
 namespace pixelator {
 
-class PixelatedImage {
+class Image {
  public:
-  PixelatedImage() = default;
+  Image() = default;
 
-  explicit PixelatedImage(const Size &size)
+  explicit Image(const Size &size)
       : size_{size}, pixels_(size_.rows * size_.cols, ftxui::Color{}) {}
 
-  PixelatedImage(int rows, int cols) : PixelatedImage{Size{rows, cols}} {}
+  Image(int rows, int cols) : Image{Size{rows, cols}} {}
 
   inline ftxui::Color &at(int row, int col) { return pixels_[Index(row, col)]; }
   inline const ftxui::Color &at(int row, int col) const {
@@ -38,5 +38,4 @@ class PixelatedImage {
 
 }  // namespace pixelator
 
-#endif /* HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_PIXELATED_IMAGE_HPP \
-        */
+#endif /* HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_IMAGE_HPP */
