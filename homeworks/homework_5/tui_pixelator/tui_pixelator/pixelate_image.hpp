@@ -6,7 +6,7 @@
 
 namespace pixelator {
 
-Image Pixelate(const StbImageDataView &image, Size smaller_size);
+Image PixelateImage(const StbImageDataView &image, Size smaller_size);
 
 }  // namespace pixelator
 

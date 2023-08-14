@@ -10,7 +10,7 @@ int Scale(int number, float factor) {
 
 namespace pixelator {
 
-Image Pixelate(const StbImageDataView &image, Size smaller_size) {
+Image PixelateImage(const StbImageDataView &image, Size smaller_size) {
   if ((smaller_size.cols > image.cols()) ||
       (smaller_size.rows > image.rows())) {
     smaller_size = image.size();

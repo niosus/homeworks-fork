@@ -8,7 +8,7 @@
 
 namespace {
 using pixelator::Image;
-using pixelator::Pixelate;
+using pixelator::PixelateImage;
 using pixelator::Size;
 using pixelator::StbImageDataView;
 
@@ -20,9 +20,9 @@ const auto kWhite{ftxui::Color::RGB(255, 255, 255)};
 TEST(PixelateTest, PassingSameOrBiggerSizeReturnsSameSizedImage) {
   const StbImageDataView image{kImagePath};
   const auto size = image.size();
-  const auto pixelated_image = Pixelate(image, size);
+  const auto pixelated_image = PixelateImage(image, size);
   const Size bigger_size{size.rows + 10, size.cols + 20};
-  const auto pixelated_image_bigger = Pixelate(image, bigger_size);
+  const auto pixelated_image_bigger = PixelateImage(image, bigger_size);
   ASSERT_FALSE(pixelated_image.empty());
   ASSERT_FALSE(pixelated_image_bigger.empty());
   ASSERT_EQ(image.rows(), pixelated_image.rows());
@@ -39,7 +39,7 @@ TEST(PixelateTest, PassingSameOrBiggerSizeReturnsSameSizedImage) {
 
 TEST(PixelateTest, PixelateSimpleTest6x4Image) {
   const StbImageDataView image{kImagePath};
-  const auto pixelated_image = Pixelate(image, Size{3, 2});
+  const auto pixelated_image = PixelateImage(image, Size{3, 2});
   EXPECT_EQ(pixelated_image.rows(), 3) << "Pixelated image has wrong size.";
   EXPECT_EQ(pixelated_image.cols(), 2) << "Pixelated image has wrong size.";
 

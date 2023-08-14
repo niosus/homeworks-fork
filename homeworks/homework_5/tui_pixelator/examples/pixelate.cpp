@@ -9,7 +9,7 @@
 
 namespace {
 using pixelator::Drawer;
-using pixelator::Pixelate;
+using pixelator::PixelateImage;
 using pixelator::StbImageDataView;
 }  // namespace
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
   }
   Drawer drawer{ftxui::Dimension::Full()};
 
-  drawer.Set(Pixelate(image, drawer.size()));
+  drawer.Set(PixelateImage(image, drawer.size()));
   drawer.Draw();
   return 0;
 }
