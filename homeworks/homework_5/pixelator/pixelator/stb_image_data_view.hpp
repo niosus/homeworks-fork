@@ -7,26 +7,26 @@
 
 #include "ftxui/screen/color.hpp"
 #include "stb/stb_image.h"
-#include "tui_pixelator/size.hpp"
+#include "pixelator/size.hpp"
 
 namespace pixelator {
 
-class StbImage {
+class StbImageDataView {
  public:
-  StbImage() = default;
-  explicit StbImage(const std::filesystem::path& image_path);
+  StbImageDataView() = default;
+  explicit StbImageDataView(const std::filesystem::path& image_path);
 
-  StbImage(const StbImage& other) = delete;
-  StbImage& operator=(const StbImage& other) = delete;
+  StbImageDataView(const StbImageDataView& other) = delete;
+  StbImageDataView& operator=(const StbImageDataView& other) = delete;
 
-  StbImage(StbImage&& other)
+  StbImageDataView(StbImageDataView&& other)
       : size_{other.size_},
         channels_{other.channels_},
         image_data_{other.image_data_} {
     other.image_data_ = nullptr;
   }
 
-  StbImage& operator=(StbImage&& other) {
+  StbImageDataView& operator=(StbImageDataView&& other) {
     if (&other == this) { return *this; }
     size_ = other.size_;
     channels_ = other.channels_;
@@ -39,7 +39,7 @@ class StbImage {
 
   inline bool empty() const noexcept { return image_data_ == nullptr; }
 
-  inline ~StbImage() { stbi_image_free(image_data_); }
+  inline ~StbImageDataView() { stbi_image_free(image_data_); }
 
   inline const Size& size() const noexcept { return size_; }
   inline int cols() const noexcept { return size_.cols; }

@@ -1,10 +1,10 @@
-#ifndef HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_DRAWER_HPP
-#define HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_DRAWER_HPP
+#ifndef HOMEWORKS_HOMEWORK_5_PIXELATOR_PIXELATOR_DRAWER_HPP
+#define HOMEWORKS_HOMEWORK_5_PIXELATOR_PIXELATOR_DRAWER_HPP
 
 #include "ftxui/screen/color.hpp"
 #include "ftxui/screen/screen.hpp"
-#include "tui_pixelator/pixelated_image.hpp"
-#include "tui_pixelator/size.hpp"
+#include "pixelator/image.hpp"
+#include "pixelator/size.hpp"
 
 namespace pixelator {
 
@@ -14,7 +14,7 @@ class Drawer {
       : screen_{ftxui::Screen::Create(std::move(dimension))},
         size_{screen_.dimy(), screen_.dimx() * 2} {}
 
-  inline void Set(const PixelatedImage &image) {
+  inline void Set(const Image &image) {
     for (int row = 0; row < image.rows(); ++row) {
       for (int col = 0; col < image.cols(); ++col) {
         SetHalfPixelColor(2 * col, row, image.at(row, col));
@@ -39,4 +39,4 @@ class Drawer {
 
 }  // namespace pixelator
 
-#endif /* HOMEWORKS_HOMEWORK_5_TUI_PIXELATOR_TUI_PIXELATOR_DRAWER_HPP */
+#endif /* HOMEWORKS_HOMEWORK_5_PIXELATOR_PIXELATOR_DRAWER_HPP */
