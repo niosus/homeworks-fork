@@ -12,4 +12,3 @@ include(CTest)
 add_subdirectory(external)
 add_subdirectory(examples)
 add_subdirectory(snake)
-
